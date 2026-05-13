@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { GameProvider, useGame } from './context/GameContext';
 import GameShell from './components/Layout/GameShell';
 import Landing from './pages/Landing';
@@ -25,7 +25,7 @@ function ProtectedRoute({ children }) {
  */
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <GameProvider>
         <Routes>
           {/* Landing — standalone (no shell) */}
@@ -96,7 +96,7 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </GameProvider>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
